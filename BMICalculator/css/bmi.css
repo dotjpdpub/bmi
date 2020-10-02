@@ -1,0 +1,85 @@
+﻿tr {
+    border-bottom: 1pt solid black;
+}
+
+table tr#ROW1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW2 {
+    background-color: royalblue;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW3 {
+    background-color: royalblue;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW4 {
+    background-color: royalblue;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW5 {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW6 {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW7 {
+    background-color: orange;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW8 {
+    background-color: orange;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW9 {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW10 {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+table tr#ROW11 {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+#errmsg1 {
+    color: red;
+}
+
+#errmsg2 {
+    color: red;
+}
+
+#errmsg3 {
+    color: red;
+}
+
+#errmsg4 {
+    color: red;
+}

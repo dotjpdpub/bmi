@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Body Mass Index (BMI) Calculator</title>
+
+    <link rel="icon" type="image/ico" href="/img/clinic.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/doc.css" rel="stylesheet" />
+    <link href="css/bmi.css" rel="stylesheet" />
+    <link href="css/btn.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <section class="doc-section p-3 p-lg-5 d-flex flex-column" id="bmi">
+            <h3><font style="color:#3EA0C8">Calculate Your BMI</font></h3>
+            <p><font size="4" style="color:#3EA0C8">Body Mass Index (BMI) Category Chart</font></p>
+
+            <div class="doc-item d-flex flex-column flex-md-row mb-5">
+                <div class="doc-content mr-auto">
+
+                    <table style="width:100%;">
+                        <tr id="ROW1" style="font-weight:bold">
+                            <td>Category</td>
+                            <td>BMI Range</td>
+                        </tr>
+
+                        <tr id="ROW2">
+                            <td>Severe Thinness</td>
+                            <td>< 16</td>
+                        </tr>
+                        <tr id="ROW3">
+                            <td>Moderate Thinness</td>
+                            <td>16 - 16.99</td>
+                        </tr>
+
+                        <tr id="ROW4">
+                            <td>Mild Thinness</td>
+                            <td>17 - 18.49</td>
+                        </tr>
+
+
+
+                        <tr id="ROW5">
+                            <td>Normal Lower Range</td>
+                            <td>18.5 - 22.99</td>
+                        </tr>
+
+                        <tr id="ROW6">
+                            <td>Normal Upper Range</td>
+                            <td>23 - 24.99</td>
+                        </tr>
+
+
+                        <tr id="ROW7">
+                            <td>Overweight Lower Range</td>
+                            <td>25 - 27.49</td>
+                        </tr>
+
+                        <tr id="ROW8">
+                            <td>Overweight Upper Range</td>
+                            <td>27.5 - 29.99</td>
+                        </tr>
+
+
+                        <tr id="ROW9">
+                            <td>Obese Class I</td>
+                            <td>30 - 34.99</td>
+                        </tr>
+
+                        <tr id="ROW10">
+                            <td>Obese Class II</td>
+                            <td>35 - 39.99</td>
+                        </tr>
+
+                        <tr id="ROW11">
+                            <td>Obese Class III</td>
+                            <td>> = 40</td>
+                        </tr>
+
+                    </table>
+                    <br />
+
+                    <div class="container">
+                        <p><font size="5" style="color:#3EA0C8">Standard Units of Measurement</font></p>
+                        <p><font size="3"><i>Click or tap on the Standard button below to display the Standard BMI fields ...</i></font></p>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#standarddemo">Standard</button>
+                        <div id="standarddemo" class="collapse">
+                            <br />
+                            <p>
+                                <font size="4" style="color:#3EA0C8">Enter your height:</font>
+                                <br />
+                                <input type="text" id="height" placeholder="Enter inches here" /><span id="errmsg1"></span>
+                            </p>
+
+                            <p>
+                                <font size="4" style="color:#3EA0C8">Enter your weight:</font>
+                                <br />
+                                <input type="text" id="weight" placeholder="Enter pounds here" /><span id="errmsg2"></span>
+                            </p>
+
+
+                            <input type="submit" value="Calculate BMI" onclick="computeStandardBMI(); validateStandard();" style="color:#3EA0C8">
+                            <input id="Button1" type="button" value="Clear" onclick="ClearStandard();" style="color:#3EA0C8" />
+                            <br />
+                            <br />
+                            <font size="4" style="color:#3EA0C8">Your BMI is:</font>
+                            <font size="4"><span id="output"></span></font>
+                            <br />
+                            <font size="4" style="color:#3EA0C8">The category you're in is:</font>
+                            <font size="4"><span id="comment"></span></font>
+
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="container">
+                        <p><font size="5" style="color:#3EA0C8">Metric Units of Measurement</font></p>
+
+                        <p><font size="3"><i>Click or tap on the Metric button below to display the Metric BMI fields ...</i></font></p>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#metricdemo">Metric</button>
+                        <div id="metricdemo" class="collapse">
+                            <br />
+                            <p>
+                                <font size="4" style="color:#3EA0C8">Enter your height:</font>
+                                <br />
+                                <input type="text" id="height1" placeholder="Enter centimeters here" /><span id="errmsg3"></span>
+                                <br />
+                                <font style="color:black">* 1 centimeter is equal to 0.393701 inches</font>
+                            </p>
+
+                            <p>
+                                <font size="4" style="color:#3EA0C8">Enter your weight:</font>
+                                <br />
+                                <input type="text" id="weight1" placeholder="Enter kilograms here" /><span id="errmsg4"></span>
+                                <br />
+                                <font style="color:black">* 1 kilogram is equal to 2.20462 pounds</font>
+                            </p>
+
+
+                            <input type="submit" value="Calculate BMI" onclick="computeMetricBMI(); validateMetric();" style="color:#3EA0C8">
+                            <input id="Button1" type="button" value="Clear" onclick="ClearMetric();" style="color:#3EA0C8" />
+                            <br />
+                            <br />
+                            <font size="4" style="color:#3EA0C8">Your BMI is:</font>
+                            <font size="4"><span id="outputmet"></span></font>
+                            <br />
+                            <font size="4" style="color:#3EA0C8">The category you're in is:</font>
+                            <font size="4"><span id="commentmet"></span></font>
+                            <br />
+                        </div>
+                    </div>
+                    <hr />
+                    <font size="4" style="color:#3EA0C8">
+                        * For online measurement converter, click <a href="https://www.unitconverters.net/" target="_blank" style="text-decoration: none;"><font color="blue" size="4">here</font></a>
+                    </font>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bmistandard.js"></script>
+    <script src="js/bmivalidation.js"></script>
+
+</body>
+</html>
